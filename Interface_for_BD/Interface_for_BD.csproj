@@ -198,6 +198,12 @@
     <Compile Include="Descriptors_View.Designer.cs">
       <DependentUpon>Descriptors_View.cs</DependentUpon>
     </Compile>
+    <Compile Include="Full Table.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Full Table.Designer.cs">
+      <DependentUpon>Full Table.cs</DependentUpon>
+    </Compile>
     <Compile Include="GA.cs" />
     <Compile Include="Main_Form.cs">
       <SubType>Form</SubType>
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Descriptors_View.resx">
       <DependentUpon>Descriptors_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Full Table.resx">
+      <DependentUpon>Full Table.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_Form.resx">
       <DependentUpon>Main_Form.cs</DependentUpon>

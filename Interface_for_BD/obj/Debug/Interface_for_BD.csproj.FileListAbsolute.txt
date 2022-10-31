@@ -80,3 +80,4 @@ C:\Users\Владелец\source\repos\Interface_for_BD\Interface_for_BD\obj\Deb
 C:\Users\Владелец\source\repos\Interface_for_BD\Interface_for_BD\obj\Debug\Interface_for_BD.Density_View.resources
 C:\Users\Владелец\source\repos\Interface_for_BD\Interface_for_BD\obj\Debug\Interface_for_BD.Main_Form.resources
 C:\Users\Владелец\source\repos\Interface_for_BD\Interface_for_BD\obj\Debug\Interface_for_BD.Substances_View.resources
+C:\Users\Владелец\source\repos\Interface_for_BD\Interface_for_BD\obj\Debug\Interface_for_BD.Full_Table.resources

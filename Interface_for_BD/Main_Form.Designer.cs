@@ -110,7 +110,7 @@ namespace Interface_for_BD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 345);
+            this.ClientSize = new System.Drawing.Size(480, 365);
             this.Controls.Add(this.Open_Density);
             this.Controls.Add(this.Open_Substances);
             this.Controls.Add(this.Open_Point);

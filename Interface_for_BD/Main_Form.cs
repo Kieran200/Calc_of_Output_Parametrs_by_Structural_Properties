@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Data.SqlClient;
+using System.Data.SqlClient;
 
 namespace Interface_for_BD
 {
@@ -20,23 +20,8 @@ namespace Interface_for_BD
 
         private void Open_BD_Click(object sender, EventArgs e)
         {
-            string ConnectionString = "Server=LAPTOP-1ttvm3h5 ; Database=DB_Descriptors_1;Trusted_Connection=True; ";
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            {
-                SqlCommand command = new SqlCommand();
-                command.Connection = connection;
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        var id = reader.GetValue(0);
-                        var Marker = reader.GetValue(1);
-                        var Name = reader.GetValue(2);
-                        var Description = reader.GetValue(3);
-                    }
-                }
-            }
+            Full_Table full_table= new Full_Table();
+            full_table.Show();
         }
 
         private void Main_Form_Load(object sender, EventArgs e)
