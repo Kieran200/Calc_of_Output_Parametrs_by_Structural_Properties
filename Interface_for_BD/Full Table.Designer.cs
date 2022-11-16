@@ -41,12 +41,33 @@ namespace Interface_for_BD
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Full_Table_View = new System.Windows.Forms.DataGridView();
-            this.btn_table_view = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name_of_substanse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name_of_descriptor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_table_view = new System.Windows.Forms.Button();
+            this.cb_sub_name = new System.Windows.Forms.ComboBox();
+            this.substancesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dB_Descriptors_1DataSet = new Interface_for_BD.DB_Descriptors_1DataSet();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Exp_view = new System.Windows.Forms.DataGridView();
+            this.Exp_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.substancesTableAdapter = new Interface_for_BD.DB_Descriptors_1DataSetTableAdapters.SubstancesTableAdapter();
+            this.Solubility = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Temperature = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pressure = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cb_sub_name_2 = new System.Windows.Forms.ComboBox();
+            this.btn_table_view_2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Full_Table_View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.substancesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_Descriptors_1DataSet)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Exp_view)).BeginInit();
             this.SuspendLayout();
             // 
             // Full_Table_View
@@ -54,24 +75,15 @@ namespace Interface_for_BD
             this.Full_Table_View.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Full_Table_View.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.Name_of_substanse,
-            this.Name_of_descriptor});
-            this.Full_Table_View.Location = new System.Drawing.Point(12, 23);
+            this.Name_of_descriptor,
+            this.Value});
+            this.Full_Table_View.Location = new System.Drawing.Point(6, 6);
             this.Full_Table_View.Name = "Full_Table_View";
             this.Full_Table_View.RowHeadersWidth = 51;
             this.Full_Table_View.RowTemplate.Height = 24;
-            this.Full_Table_View.Size = new System.Drawing.Size(758, 339);
+            this.Full_Table_View.Size = new System.Drawing.Size(756, 343);
             this.Full_Table_View.TabIndex = 0;
-            // 
-            // btn_table_view
-            // 
-            this.btn_table_view.Location = new System.Drawing.Point(12, 391);
-            this.btn_table_view.Name = "btn_table_view";
-            this.btn_table_view.Size = new System.Drawing.Size(164, 47);
-            this.btn_table_view.TabIndex = 1;
-            this.btn_table_view.Text = "Показать вещества";
-            this.btn_table_view.UseVisualStyleBackColor = true;
-            this.btn_table_view.Click += new System.EventHandler(this.btn_table_view_Click);
+            this.Full_Table_View.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Full_Table_View_CellContentClick);
             // 
             // Id
             // 
@@ -80,13 +92,6 @@ namespace Interface_for_BD
             this.Id.Name = "Id";
             this.Id.Width = 125;
             // 
-            // Name_of_substanse
-            // 
-            this.Name_of_substanse.HeaderText = "Name of substanse";
-            this.Name_of_substanse.MinimumWidth = 6;
-            this.Name_of_substanse.Name = "Name_of_substanse";
-            this.Name_of_substanse.Width = 125;
-            // 
             // Name_of_descriptor
             // 
             this.Name_of_descriptor.HeaderText = "Name of descriptor";
@@ -94,16 +99,166 @@ namespace Interface_for_BD
             this.Name_of_descriptor.Name = "Name_of_descriptor";
             this.Name_of_descriptor.Width = 125;
             // 
+            // Value
+            // 
+            this.Value.HeaderText = "Value";
+            this.Value.MinimumWidth = 6;
+            this.Value.Name = "Value";
+            this.Value.Width = 125;
+            // 
+            // btn_table_view
+            // 
+            this.btn_table_view.Location = new System.Drawing.Point(6, 354);
+            this.btn_table_view.Name = "btn_table_view";
+            this.btn_table_view.Size = new System.Drawing.Size(164, 47);
+            this.btn_table_view.TabIndex = 1;
+            this.btn_table_view.Text = "Показать значения растворимости";
+            this.btn_table_view.UseVisualStyleBackColor = true;
+            this.btn_table_view.Click += new System.EventHandler(this.btn_table_view_Click);
+            // 
+            // cb_sub_name
+            // 
+            this.cb_sub_name.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.substancesBindingSource, "Name", true));
+            this.cb_sub_name.DataSource = this.substancesBindingSource;
+            this.cb_sub_name.DisplayMember = "Name";
+            this.cb_sub_name.FormattingEnabled = true;
+            this.cb_sub_name.Location = new System.Drawing.Point(231, 366);
+            this.cb_sub_name.Name = "cb_sub_name";
+            this.cb_sub_name.Size = new System.Drawing.Size(121, 24);
+            this.cb_sub_name.TabIndex = 3;
+            this.cb_sub_name.ValueMember = "Id";
+            // 
+            // substancesBindingSource
+            // 
+            this.substancesBindingSource.DataMember = "Substances";
+            this.substancesBindingSource.DataSource = this.dB_Descriptors_1DataSet;
+            // 
+            // dB_Descriptors_1DataSet
+            // 
+            this.dB_Descriptors_1DataSet.DataSetName = "DB_Descriptors_1DataSet";
+            this.dB_Descriptors_1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(12, 1);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(776, 437);
+            this.tabControl1.TabIndex = 4;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.btn_table_view_2);
+            this.tabPage1.Controls.Add(this.cb_sub_name_2);
+            this.tabPage1.Controls.Add(this.Full_Table_View);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(768, 408);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.Exp_view);
+            this.tabPage2.Controls.Add(this.cb_sub_name);
+            this.tabPage2.Controls.Add(this.btn_table_view);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(768, 408);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // Exp_view
+            // 
+            this.Exp_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Exp_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Exp_Id,
+            this.Solubility,
+            this.Temperature,
+            this.Pressure});
+            this.Exp_view.Location = new System.Drawing.Point(6, 6);
+            this.Exp_view.Name = "Exp_view";
+            this.Exp_view.RowHeadersWidth = 51;
+            this.Exp_view.RowTemplate.Height = 24;
+            this.Exp_view.Size = new System.Drawing.Size(756, 342);
+            this.Exp_view.TabIndex = 0;
+            // 
+            // Exp_Id
+            // 
+            this.Exp_Id.HeaderText = "Exp id";
+            this.Exp_Id.MinimumWidth = 6;
+            this.Exp_Id.Name = "Exp_Id";
+            this.Exp_Id.Width = 125;
+            // 
+            // substancesTableAdapter
+            // 
+            this.substancesTableAdapter.ClearBeforeFill = true;
+            // 
+            // Solubility
+            // 
+            this.Solubility.HeaderText = "Solubility";
+            this.Solubility.MinimumWidth = 6;
+            this.Solubility.Name = "Solubility";
+            this.Solubility.Width = 125;
+            // 
+            // Temperature
+            // 
+            this.Temperature.HeaderText = "Temperature";
+            this.Temperature.MinimumWidth = 6;
+            this.Temperature.Name = "Temperature";
+            this.Temperature.Width = 125;
+            // 
+            // Pressure
+            // 
+            this.Pressure.HeaderText = "Pressure";
+            this.Pressure.MinimumWidth = 6;
+            this.Pressure.Name = "Pressure";
+            this.Pressure.Width = 125;
+            // 
+            // cb_sub_name_2
+            // 
+            this.cb_sub_name_2.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.substancesBindingSource, "Name", true));
+            this.cb_sub_name_2.DataSource = this.substancesBindingSource;
+            this.cb_sub_name_2.DisplayMember = "Name";
+            this.cb_sub_name_2.FormattingEnabled = true;
+            this.cb_sub_name_2.Location = new System.Drawing.Point(226, 367);
+            this.cb_sub_name_2.Name = "cb_sub_name_2";
+            this.cb_sub_name_2.Size = new System.Drawing.Size(121, 24);
+            this.cb_sub_name_2.TabIndex = 4;
+            this.cb_sub_name_2.ValueMember = "Id";
+            // 
+            // btn_table_view_2
+            // 
+            this.btn_table_view_2.Location = new System.Drawing.Point(6, 355);
+            this.btn_table_view_2.Name = "btn_table_view_2";
+            this.btn_table_view_2.Size = new System.Drawing.Size(164, 47);
+            this.btn_table_view_2.TabIndex = 5;
+            this.btn_table_view_2.Text = "Показать характеристики";
+            this.btn_table_view_2.UseVisualStyleBackColor = true;
+            this.btn_table_view_2.Click += new System.EventHandler(this.btn_table_view_2_Click);
+            // 
             // Full_Table
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btn_table_view);
-            this.Controls.Add(this.Full_Table_View);
+            this.Controls.Add(this.tabControl1);
             this.Name = "Full_Table";
             this.Text = "Full_Table";
+            this.Load += new System.EventHandler(this.Full_Table_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Full_Table_View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.substancesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_Descriptors_1DataSet)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Exp_view)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -114,7 +269,21 @@ namespace Interface_for_BD
         string ConnectionString = "Server=LAPTOP-1ttvm3h5 ; Database=DB_Descriptors_1;Trusted_Connection=True; ";
         private Button btn_table_view;
         private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn Name_of_substanse;
         private DataGridViewTextBoxColumn Name_of_descriptor;
+        private DataGridViewTextBoxColumn Value;
+        private ComboBox cb_sub_name;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
+        private DataGridView Exp_view;
+        private DataGridViewTextBoxColumn Exp_Id;
+        private DB_Descriptors_1DataSet dB_Descriptors_1DataSet;
+        private BindingSource substancesBindingSource;
+        private DB_Descriptors_1DataSetTableAdapters.SubstancesTableAdapter substancesTableAdapter;
+        private DataGridViewTextBoxColumn Solubility;
+        private DataGridViewTextBoxColumn Temperature;
+        private DataGridViewTextBoxColumn Pressure;
+        private Button btn_table_view_2;
+        private ComboBox cb_sub_name_2;
     }
 }
