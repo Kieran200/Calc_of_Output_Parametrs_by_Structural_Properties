@@ -52,15 +52,15 @@ namespace Interface_for_BD
             this.dB_Descriptors_1DataSet = new Interface_for_BD.DB_Descriptors_1DataSet();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btn_table_view_2 = new System.Windows.Forms.Button();
+            this.cb_sub_name_2 = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Exp_view = new System.Windows.Forms.DataGridView();
             this.Exp_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.substancesTableAdapter = new Interface_for_BD.DB_Descriptors_1DataSetTableAdapters.SubstancesTableAdapter();
             this.Solubility = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Temperature = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pressure = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cb_sub_name_2 = new System.Windows.Forms.ComboBox();
-            this.btn_table_view_2 = new System.Windows.Forms.Button();
+            this.substancesTableAdapter = new Interface_for_BD.DB_Descriptors_1DataSetTableAdapters.SubstancesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.Full_Table_View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.substancesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_Descriptors_1DataSet)).BeginInit();
@@ -142,7 +142,7 @@ namespace Interface_for_BD
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 1);
+            this.tabControl1.Location = new System.Drawing.Point(12, -2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(776, 437);
@@ -160,6 +160,28 @@ namespace Interface_for_BD
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btn_table_view_2
+            // 
+            this.btn_table_view_2.Location = new System.Drawing.Point(6, 355);
+            this.btn_table_view_2.Name = "btn_table_view_2";
+            this.btn_table_view_2.Size = new System.Drawing.Size(164, 47);
+            this.btn_table_view_2.TabIndex = 5;
+            this.btn_table_view_2.Text = "Показать характеристики";
+            this.btn_table_view_2.UseVisualStyleBackColor = true;
+            this.btn_table_view_2.Click += new System.EventHandler(this.btn_table_view_2_Click);
+            // 
+            // cb_sub_name_2
+            // 
+            this.cb_sub_name_2.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.substancesBindingSource, "Name", true));
+            this.cb_sub_name_2.DataSource = this.substancesBindingSource;
+            this.cb_sub_name_2.DisplayMember = "Name";
+            this.cb_sub_name_2.FormattingEnabled = true;
+            this.cb_sub_name_2.Location = new System.Drawing.Point(226, 367);
+            this.cb_sub_name_2.Name = "cb_sub_name_2";
+            this.cb_sub_name_2.Size = new System.Drawing.Size(121, 24);
+            this.cb_sub_name_2.TabIndex = 4;
+            this.cb_sub_name_2.ValueMember = "Id";
             // 
             // tabPage2
             // 
@@ -196,10 +218,6 @@ namespace Interface_for_BD
             this.Exp_Id.Name = "Exp_Id";
             this.Exp_Id.Width = 125;
             // 
-            // substancesTableAdapter
-            // 
-            this.substancesTableAdapter.ClearBeforeFill = true;
-            // 
             // Solubility
             // 
             this.Solubility.HeaderText = "Solubility";
@@ -221,34 +239,18 @@ namespace Interface_for_BD
             this.Pressure.Name = "Pressure";
             this.Pressure.Width = 125;
             // 
-            // cb_sub_name_2
+            // substancesTableAdapter
             // 
-            this.cb_sub_name_2.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.substancesBindingSource, "Name", true));
-            this.cb_sub_name_2.DataSource = this.substancesBindingSource;
-            this.cb_sub_name_2.DisplayMember = "Name";
-            this.cb_sub_name_2.FormattingEnabled = true;
-            this.cb_sub_name_2.Location = new System.Drawing.Point(226, 367);
-            this.cb_sub_name_2.Name = "cb_sub_name_2";
-            this.cb_sub_name_2.Size = new System.Drawing.Size(121, 24);
-            this.cb_sub_name_2.TabIndex = 4;
-            this.cb_sub_name_2.ValueMember = "Id";
-            // 
-            // btn_table_view_2
-            // 
-            this.btn_table_view_2.Location = new System.Drawing.Point(6, 355);
-            this.btn_table_view_2.Name = "btn_table_view_2";
-            this.btn_table_view_2.Size = new System.Drawing.Size(164, 47);
-            this.btn_table_view_2.TabIndex = 5;
-            this.btn_table_view_2.Text = "Показать характеристики";
-            this.btn_table_view_2.UseVisualStyleBackColor = true;
-            this.btn_table_view_2.Click += new System.EventHandler(this.btn_table_view_2_Click);
+            this.substancesTableAdapter.ClearBeforeFill = true;
             // 
             // Full_Table
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "Full_Table";
             this.Text = "Full_Table";
             this.Load += new System.EventHandler(this.Full_Table_Load);
@@ -266,7 +268,6 @@ namespace Interface_for_BD
         #endregion
 
         private System.Windows.Forms.DataGridView Full_Table_View;
-        string ConnectionString = "Server=LAPTOP-1ttvm3h5 ; Database=DB_Descriptors_1;Trusted_Connection=True; ";
         private Button btn_table_view;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Name_of_descriptor;

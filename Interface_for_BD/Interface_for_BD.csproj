@@ -186,17 +186,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB_Descriptors_1DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Density_View.cs">
+    <Compile Include="Equation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Density_View.Designer.cs">
-      <DependentUpon>Density_View.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Descriptors_View.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Descriptors_View.Designer.cs">
-      <DependentUpon>Descriptors_View.cs</DependentUpon>
+    <Compile Include="Equation.Designer.cs">
+      <DependentUpon>Equation.cs</DependentUpon>
     </Compile>
     <Compile Include="Full Table.cs">
       <SubType>Form</SubType>
@@ -211,34 +205,17 @@
     <Compile Include="Main_Form.Designer.cs">
       <DependentUpon>Main_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Points_View.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Points_View.Designer.cs">
-      <DependentUpon>Points_View.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Population.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Substances_View.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Substances_View.Designer.cs">
-      <DependentUpon>Substances_View.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Density_View.resx">
-      <DependentUpon>Density_View.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Descriptors_View.resx">
-      <DependentUpon>Descriptors_View.cs</DependentUpon>
+    <EmbeddedResource Include="Equation.resx">
+      <DependentUpon>Equation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Full Table.resx">
       <DependentUpon>Full Table.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_Form.resx">
       <DependentUpon>Main_Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Points_View.resx">
-      <DependentUpon>Points_View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -249,9 +226,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Substances_View.resx">
-      <DependentUpon>Substances_View.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="DB_Descriptors_1DataSet.xsc">
       <DependentUpon>DB_Descriptors_1DataSet.xsd</DependentUpon>
     </None>

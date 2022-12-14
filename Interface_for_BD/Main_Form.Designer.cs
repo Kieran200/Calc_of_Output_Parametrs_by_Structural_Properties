@@ -34,22 +34,21 @@ namespace Interface_for_BD
             this.dB_Descriptors_1DataSet = new Interface_for_BD.DB_Descriptors_1DataSet();
             this.descriptorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.descriptorsTableAdapter = new Interface_for_BD.DB_Descriptors_1DataSetTableAdapters.DescriptorsTableAdapter();
-            this.Open_Descriptors = new System.Windows.Forms.Button();
-            this.Open_Point = new System.Windows.Forms.Button();
-            this.Open_Substances = new System.Windows.Forms.Button();
-            this.Open_Density = new System.Windows.Forms.Button();
+            this.Btn_2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dB_Descriptors_1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.descriptorsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Open_BD
             // 
-            this.Open_BD.Location = new System.Drawing.Point(163, 260);
+            this.Open_BD.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.Open_BD.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.Open_BD.Location = new System.Drawing.Point(147, 27);
             this.Open_BD.Name = "Open_BD";
-            this.Open_BD.Size = new System.Drawing.Size(137, 56);
+            this.Open_BD.Size = new System.Drawing.Size(174, 56);
             this.Open_BD.TabIndex = 0;
-            this.Open_BD.Text = "Open BD";
-            this.Open_BD.UseVisualStyleBackColor = true;
+            this.Open_BD.Text = "Открыть базу данных";
+            this.Open_BD.UseVisualStyleBackColor = false;
             this.Open_BD.Click += new System.EventHandler(this.Open_BD_Click);
             // 
             // dB_Descriptors_1DataSet
@@ -57,65 +56,28 @@ namespace Interface_for_BD
             this.dB_Descriptors_1DataSet.DataSetName = "DB_Descriptors_1DataSet";
             this.dB_Descriptors_1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // descriptorsBindingSource
-            // 
-            this.descriptorsBindingSource.DataMember = "Descriptors";
-            this.descriptorsBindingSource.DataSource = this.dB_Descriptors_1DataSet;
-            // 
             // descriptorsTableAdapter
             // 
             this.descriptorsTableAdapter.ClearBeforeFill = true;
             // 
-            // Open_Descriptors
+            // Btn_2
             // 
-            this.Open_Descriptors.Location = new System.Drawing.Point(163, 12);
-            this.Open_Descriptors.Name = "Open_Descriptors";
-            this.Open_Descriptors.Size = new System.Drawing.Size(137, 56);
-            this.Open_Descriptors.TabIndex = 1;
-            this.Open_Descriptors.Text = "Open descriptors";
-            this.Open_Descriptors.UseVisualStyleBackColor = true;
-            this.Open_Descriptors.Click += new System.EventHandler(this.Open_Descriptors_Click);
-            // 
-            // Open_Point
-            // 
-            this.Open_Point.Location = new System.Drawing.Point(164, 74);
-            this.Open_Point.Name = "Open_Point";
-            this.Open_Point.Size = new System.Drawing.Size(136, 56);
-            this.Open_Point.TabIndex = 2;
-            this.Open_Point.Text = "Open points";
-            this.Open_Point.UseVisualStyleBackColor = true;
-            this.Open_Point.Click += new System.EventHandler(this.Open_Points_Click);
-            // 
-            // Open_Substances
-            // 
-            this.Open_Substances.Location = new System.Drawing.Point(163, 136);
-            this.Open_Substances.Name = "Open_Substances";
-            this.Open_Substances.Size = new System.Drawing.Size(137, 56);
-            this.Open_Substances.TabIndex = 3;
-            this.Open_Substances.Text = "Open substances";
-            this.Open_Substances.UseVisualStyleBackColor = true;
-            this.Open_Substances.Click += new System.EventHandler(this.Open_Substances_Click);
-            // 
-            // Open_Density
-            // 
-            this.Open_Density.Location = new System.Drawing.Point(163, 198);
-            this.Open_Density.Name = "Open_Density";
-            this.Open_Density.Size = new System.Drawing.Size(137, 56);
-            this.Open_Density.TabIndex = 4;
-            this.Open_Density.Text = "Open density";
-            this.Open_Density.UseVisualStyleBackColor = true;
-            this.Open_Density.Click += new System.EventHandler(this.Open_Density_Click);
+            this.Btn_2.Location = new System.Drawing.Point(147, 101);
+            this.Btn_2.Name = "Btn_2";
+            this.Btn_2.Size = new System.Drawing.Size(174, 56);
+            this.Btn_2.TabIndex = 1;
+            this.Btn_2.Text = "Работа с уравнением растворимости";
+            this.Btn_2.UseVisualStyleBackColor = true;
+            this.Btn_2.Click += new System.EventHandler(this.Btn_2_Click);
             // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(480, 365);
+            this.Controls.Add(this.Btn_2);
             this.Controls.Add(this.Open_BD);
-            this.Controls.Add(this.Open_Density);
-            this.Controls.Add(this.Open_Substances);
-            this.Controls.Add(this.Open_Point);
-            this.Controls.Add(this.Open_Descriptors);
             this.Name = "Main_Form";
             this.Text = "Главное меню";
             this.Load += new System.EventHandler(this.Main_Form_Load);
@@ -131,10 +93,7 @@ namespace Interface_for_BD
         private DB_Descriptors_1DataSet dB_Descriptors_1DataSet;
         private System.Windows.Forms.BindingSource descriptorsBindingSource;
         private DB_Descriptors_1DataSetTableAdapters.DescriptorsTableAdapter descriptorsTableAdapter;
-        private System.Windows.Forms.Button Open_Descriptors;
-        private System.Windows.Forms.Button Open_Point;
-        private System.Windows.Forms.Button Open_Substances;
-        private System.Windows.Forms.Button Open_Density;
+        private System.Windows.Forms.Button Btn_2;
     }
 }
 
